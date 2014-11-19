@@ -1,7 +1,21 @@
 xgettext-dust
 =============
 
-Parses dust templates and extracts strings, generating a Gettext POT file for use in i18n translation systems.
+Parses dust templates and extracts strings, generating a Gettext POT file for use in i18n translation systems. 
+
+We take a dust template that has one or more @i18n helper calls:
+
+	{@i18n singular="Hello, {first_name}, you have one message." plural="Hello, {first_name}, you have {message_count} messages!"/}
+
+And then output the corresponding POT file template, for use in Gettext translation workflows:
+
+	#: examples/basic2.dust:10
+	msgid "Hello, {first_name}, you have one message."
+	msgid_plural "Hello, {first_name}, you have {message_count} messages!"
+	msgstr[0] ""
+	msgstr[1] ""
+
+Support is included for singular, plural, context and file/line reference. Instead of sprintf style replacements, we leverage the Dust placeholders, which functionally work the same way. Parsing is done via the real dust parser (using the generated AST from the dust templates), so all valid Dust syntax and templates are supported.
 
 Installing
 -------------
@@ -27,7 +41,7 @@ fs.writeFileSync('dustStrings.pot', generatedPOT, 'utf8');
 ```
 
 The first parameter is a glob pattern, so you can scan directories recursively looking for templates.
-The glob search starts looking in the root parameter -- the above example just uses process.cwd().
+The glob search starts looking in the root parameter -- the above example just uses `process.cwd()`.
 
 Running Tests
 -------------
