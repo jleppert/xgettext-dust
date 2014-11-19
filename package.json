@@ -1,0 +1,42 @@
+{
+  "name": "xgettext-dust",
+  "version": "0.0.1",
+  "description": "Parses dust templates and extracts strings, generating a Gettext POT file for use in i18n translation systems.",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "dustjs-linkedin": "^2.5.0",
+    "gettext-parser": "^0.2.0",
+    "glob": "^4.0.6",
+    "node-gettext": "^0.2.14"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jleppert/xgettext-dust"
+  },
+  "keywords": [
+    "i18n",
+    "gettext",
+    "dust",
+    "node",
+    "po",
+    "pot",
+    "translation",
+    "language"
+  ],
+  "author": "Johnathan Leppert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jleppert/xgettext-dust/issues"
+  },
+  "homepage": "https://github.com/jleppert/xgettext-dust"
+}
