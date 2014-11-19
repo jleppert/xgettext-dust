@@ -56,6 +56,18 @@ Reporting Bugs & Feature Requests
 -------------
 Please use github to report all bugs and feature requests at <http://github.com/jleppert/xgettext-dust/issues>.
 
+Further Reading
+-------------
+[Gettext Intro](https://developer.mozilla.org/en-US/docs/gettext)
+
+[The PO Format](http://pology.nedohodnik.net/doc/user/en_US/ch-poformat.html)
+
+[Javascript Gettext Implementation](http://slexaxton.github.io/Jed/)
+
+[The entire gettext spec](http://www.gnu.org/savannah-checkouts/gnu/gettext/manual/html_node/gettext.html)
+
+[Po2json converter](https://github.com/mikeedwards/po2json)
+
 License
 -------------
 Copyright (c) 2014 Johnathan Leppert <johnathan.leppert@gmail.com>
