@@ -7,7 +7,7 @@ We take a dust template that has one or more @i18n helper calls:
 
 	{@i18n singular="Hello, {first_name}, you have one message." plural="Hello, {first_name}, you have {message_count} messages!"/}
 
-And then output the corresponding POT file template, for use in Gettext translation workflows:
+And then output the corresponding [POT file](http://www.icanlocalize.com/site/tutorials/how-to-translate-with-gettext-po-and-pot-files/), for use in Gettext translation workflows:
 
 	#: examples/basic2.dust:10
 	msgid "Hello, {first_name}, you have one message."
