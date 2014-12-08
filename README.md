@@ -9,7 +9,7 @@ We take a dust template that has one or more @i18n helper calls:
 
 	{@i18n singular="Hello, {first_name}, you have one message." plural="Hello, {first_name}, you have {message_count} messages!"/}
 
-And then output the corresponding POT file template, for use in Gettext translation workflows:
+And then output the corresponding [POT file](http://www.icanlocalize.com/site/tutorials/how-to-translate-with-gettext-po-and-pot-files/), for use in Gettext translation workflows:
 
 	#: examples/basic2.dust:10
 	msgid "Hello, {first_name}, you have one message."
@@ -58,14 +58,17 @@ Reporting Bugs & Feature Requests
 -------------
 Please use github to report all bugs and feature requests at <http://github.com/jleppert/xgettext-dust/issues>.
 
-
 Further Reading
 -------------
-Gettext Intro - https://developer.mozilla.org/en-US/docs/gettext
-The PO Format - http://pology.nedohodnik.net/doc/user/en_US/ch-poformat.html
-Javascript Gettext Implementation - http://slexaxton.github.io/Jed/
-The entire gettext spec - http://www.gnu.org/savannah-checkouts/gnu/gettext/manual/html_node/gettext.html
-Po2json converter - https://github.com/mikeedwards/po2json
+[Gettext Intro](https://developer.mozilla.org/en-US/docs/gettext)
+
+[The PO Format](http://pology.nedohodnik.net/doc/user/en_US/ch-poformat.html)
+
+[Javascript Gettext Implementation](http://slexaxton.github.io/Jed/)
+
+[The entire gettext spec](http://www.gnu.org/savannah-checkouts/gnu/gettext/manual/html_node/gettext.html)
+
+[Po2json converter](https://github.com/mikeedwards/po2json)
 
 License
 -------------
