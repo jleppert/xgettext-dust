@@ -1,6 +1,8 @@
 xgettext-dust
 =============
 
+tl;dr - don't reinvent the wheel. If you're using Dust and need to internationalize your app, you should be using gettext.
+
 Parses dust templates and extracts strings, generating a Gettext POT file for use in i18n translation systems. 
 
 We take a dust template that has one or more @i18n helper calls:
@@ -28,7 +30,7 @@ Usage Example
 ``` js
 var xgettextDust = require('xgettext-dust');
 
-var generatedPOT = xgettextDust('templates/*.dust', {
+var generatedPOT = xgettextDust.parseFiles('templates/*.dust', {
     version: '0.0.1',
     langTeam: 'team',
 	bugReports: 'bugs@example.com',
@@ -55,6 +57,15 @@ Make sure you have Mocha installed:
 Reporting Bugs & Feature Requests
 -------------
 Please use github to report all bugs and feature requests at <http://github.com/jleppert/xgettext-dust/issues>.
+
+
+Further Reading
+-------------
+Gettext Intro - https://developer.mozilla.org/en-US/docs/gettext
+The PO Format - http://pology.nedohodnik.net/doc/user/en_US/ch-poformat.html
+Javascript Gettext Implementation - http://slexaxton.github.io/Jed/
+The entire gettext spec - http://www.gnu.org/savannah-checkouts/gnu/gettext/manual/html_node/gettext.html
+Po2json converter - https://github.com/mikeedwards/po2json
 
 License
 -------------

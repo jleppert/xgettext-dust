@@ -21,9 +21,13 @@ function parseFiles(globPattern, options) {
 	var translations = {},
 		memory = {};
 	files.forEach(function(file) {
-		translations[file] = parseFile(file, memory);
+		translations[file] = parseString(fs.readFileSync(path.resolve(options.root, file), 'utf8'), file, memory, options);
 	});
 
+	return createPoFile(translations, options, memory);
+}
+
+function createPoFile(translations, options, memory) {
 	var poJSON = {};
 
 	if(!options.merge) {
@@ -53,7 +57,7 @@ function parseFiles(globPattern, options) {
 	}
 
 	if(!options.noDate) poJSON.headers['pot-creation-date'] = new Date().toISOString().replace('T', ' ').replace(/:\d{2}.\d{3}Z/, '+0000');
-	
+
 	Object.keys(translations).forEach(function(file) {
 		Object.keys(translations[file]).forEach(function(entry) {
 			var translationEntry = translations[file][entry];
@@ -70,10 +74,10 @@ function parseFiles(globPattern, options) {
 	return gettext.po.compile(poJSON).toString();
 }
 
-function parseFile(file, memory) {
+function parseString(str, filename, memory, options) {
 	var translations = {};
 
-	parseDust(fs.readFileSync(file, 'utf8')).forEach(function(helper) {
+	parseDust(str).forEach(function(helper) {
 		var entry = {};
 
 		entry.msgid = helper.body || helper.singular;
@@ -86,7 +90,7 @@ function parseFile(file, memory) {
 
 		var index = JSON.stringify(entry);
 		memory[index] = memory[index] || [];
-		memory[index].push(file + ':' + helper.line);
+		memory[index].push(filename + ':' + helper.line);
 
 		translations[entry.msgid] = entry;
 	});
@@ -173,4 +177,12 @@ function parseDust(buffer) {
 	return output;
 };
 
-module.exports = parseFiles;
+module.exports = {
+	parseString: function(str, filename, memory, options) {
+		var memory = memory || {},
+			translations = {};
+		translations[filename] = parseString(str, filename, memory, options);
+		return createPoFile(translations, options, memory);
+	},
+	parseFiles:  parseFiles
+};
