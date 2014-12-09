@@ -1,6 +1,6 @@
 {
   "name": "xgettext-dust",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Parses dust templates and extracts strings, generating a Gettext POT file for use in i18n translation systems.",
   "main": "index.js",
   "directories": {

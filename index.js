@@ -140,7 +140,11 @@ function parseDust(buffer) {
 							if(bodyItem[0] === 'buffer') {
 								_b.push(bodyItem[1]);
 							} else if(bodyItem[0] === 'reference') {
-								_b.push('{' + bodyItem[1][1] + '}');
+								if(bodyItem[1][0] === 'key') {
+									_b.push('{' + bodyItem[1][1] + '}');
+								} else if(bodyItem[1][0] === 'path') {
+									_b.push('{' + bodyItem[1][2].join('.') + '}');
+								}
 							}
 						});
 					}
@@ -157,7 +161,11 @@ function parseDust(buffer) {
 									if(bodyItem[0] === 'buffer') {
 										_b.push(bodyItem[1])
 									} else if(bodyItem[0] === 'reference') {
-										_b.push('{' + bodyItem[1][1] + '}')
+										if(bodyItem[1][0] === 'key') {
+											_b.push('{' + bodyItem[1][1] + '}');
+										} else if(bodyItem[1][0] === 'path') {
+											_b.push('{' + bodyItem[1][2].join('.') + '}');
+										}
 									}
 								});
 								_p[p[0][1]] = _b.join('');

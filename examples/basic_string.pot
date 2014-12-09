@@ -9,34 +9,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: examples/basic.dust:1
-#: examples/basic.dust:2
-#: examples/basic.dust:7
-#: examples/basic.dust:8
+#: examples/basic.dust:4
+#: examples/basic.dust:9
+#: examples/basic.dust:10
 msgid "Click here"
 msgstr ""
 
+#: examples/basic.dust:2
+msgid "Click here, {grandma}!"
+msgstr ""
+
 #: examples/basic.dust:3
+msgid "Click here, {some.dude}!"
+msgstr ""
+
+#: examples/basic.dust:5
 msgid "Hello, {first_name}! Today is Monday."
 msgstr ""
 
-#: examples/basic.dust:4
+#: examples/basic.dust:6
 msgid "I have just a single cat, so I'm a normal person."
 msgid_plural "I have {cat_count} cats, so I must be a cat lady!"
 msgstr[0] ""
 msgstr[1] ""
 
-#: examples/basic.dust:5
+#: examples/basic.dust:7
 msgctxt "Asks the user their favorite color"
 msgid "Hi, {first_name}, what is your favorite color?"
 msgstr ""
 
-#: examples/basic.dust:6
-#: examples/basic.dust:10
+#: examples/basic.dust:8
+#: examples/basic.dust:12
+#: examples/basic.dust:13
 msgid "Hello, {first_name}, you have one message."
 msgid_plural "Hello, {first_name}, you have {message_count} messages!"
 msgstr[0] ""
 msgstr[1] ""
 
-#: examples/basic.dust:9
+#: examples/basic.dust:11
 msgid "Click here, again!"
 msgstr ""
+
+#: examples/basic.dust:14
+msgid "Hello, {name.first}, you have one message."
+msgid_plural "Hello, {first_name}, you have {messages.message_count} messages!"
+msgstr[0] ""
+msgstr[1] ""

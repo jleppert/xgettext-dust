@@ -1,4 +1,6 @@
 {@i18n}Click here{/i18n}
+{@i18n}Click here, {grandma}!{/i18n}
+{@i18n}Click here, {some.dude}!{/i18n}
 {@i18n domain="fr_FR"}Click here{/i18n}
 {@i18n}Hello, {first_name}! Today is Monday.{/i18n}
 {@i18n plural="I have {cat_count} cats, so I must be a cat lady!" value="{cat_count}"}I have just a single cat, so I'm a normal person.{/i18n}
@@ -8,3 +10,5 @@
 {@i18n}Click here{/i18n}
 {@i18n}Click here, again!{/i18n}
 {@i18n singular="Hello, {first_name}, you have one message." plural="Hello, {first_name}, you have {message_count} messages!"/}
+{@i18n singular="Hello, {first_name}, you have one message." plural="Hello, {first_name}, you have {message_count} messages!"/}
+{@i18n singular="Hello, {name.first}, you have one message." plural="Hello, {first_name}, you have {messages.message_count} messages!"/}
